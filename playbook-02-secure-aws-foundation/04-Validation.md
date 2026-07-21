@@ -10,18 +10,23 @@ The following validation activities were performed after implementation.
 
 ## Validation Results
 
-| Validation Test | Expected Result | Outcome |
-|-----------------|-----------------|---------|
-| AWS root account is no longer used for routine administration | Success | ✅ Passed |
-| Individual IAM users authenticate successfully | Success | ✅ Passed |
-| Multi-Factor Authentication (MFA) is required for privileged users | Success | ✅ Passed |
-| ReadOnly users cannot perform administrative actions | Success | ✅ Passed |
-| Administrators retain appropriate permissions | Success | ✅ Passed |
-| CloudTrail captures management events | Success | ✅ Passed |
-| CloudWatch monitoring is operational | Success | ✅ Passed |
-| SNS notifications are delivered successfully | Success | ✅ Passed |
-| Terraform deploys infrastructure successfully | Success | ✅ Passed |
+## Validation Results
 
+| Validation Check | Expected Result | Result |
+|---|---|---|
+| Individual IAM identity exists | Administrative work does not depend on routine root-user access | Passed |
+| MFA is enabled | The IAM identity requires an additional authentication factor | Passed |
+| Read-only permissions are assigned through a group | Access is managed through role-based group membership | Passed |
+| CloudTrail logging is enabled | AWS management activity is recorded | Passed |
+| CloudTrail logs are delivered to Amazon S3 | Audit logs are retained outside the event-history interface | Passed |
+| CloudTrail events are sent to CloudWatch Logs | Events are available for centralized monitoring | Passed |
+| Root-account metric filter exists | Root-user activity can generate a security metric | Passed |
+| CloudWatch alarm is connected to SNS | Matching security events initiate a notification workflow | Passed |
+| SNS test notification is received | The notification channel successfully delivers email alerts | Passed |
+
+## Validation Evidence
+
+Screenshots were captured for each implemented control and stored in the [`images`](./images/) directory. Sensitive account identifiers and personal information were excluded or redacted before publication.
 ---
 
 ## Business Outcomes

@@ -129,3 +129,30 @@ The implementation followed a business-first approach:
 6. Automate infrastructure
 
 Each phase directly supported the project's objective of creating a secure AWS foundation without introducing unnecessary operational complexity.
+
+## Implementation Evidence
+
+The security controls were implemented and validated in an AWS account.
+
+### Identity and Access Management
+
+- Created an individual IAM user for administrative activity.
+- Enabled multi-factor authentication.
+- Created a read-only IAM group using the AWS-managed `ReadOnlyAccess` policy.
+- Verified group membership and assigned permissions.
+
+### Audit Logging
+
+- Created a multi-Region CloudTrail trail.
+- Configured CloudTrail to deliver audit logs to Amazon S3.
+- Connected the trail to Amazon CloudWatch Logs for centralized monitoring.
+- Verified that AWS management events appeared in CloudTrail Event History.
+
+### Security Monitoring and Alerting
+
+- Created a CloudWatch Logs metric filter for root-account activity.
+- Created a CloudWatch alarm that enters the alarm state when root activity is detected.
+- Connected the alarm to an Amazon SNS security-alert topic.
+- Confirmed the SNS email subscription and successfully delivered a test notification.
+
+Implementation screenshots are available in the [`images`](./images/) directory.
