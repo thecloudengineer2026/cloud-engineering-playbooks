@@ -14,6 +14,10 @@ A cost-conscious AWS security foundation using IAM, MFA, CloudTrail, Amazon S3, 
 
 A role-based AWS identity and access-management solution replacing shared root credentials with individual identities, scoped permissions, MFA enforcement, credential auditing, and positive and negative authorization testing.
 
+### [Playbook 04 - TechHealth Infrastructure as Code Migration](playbook-04-techhealth-cdk-migration/)
+
+A tested AWS CDK v2 and TypeScript modernization proof of concept featuring a two-Availability-Zone VPC, public and isolated subnet tiers, EC2 administration through Systems Manager, private encrypted RDS, Secrets Manager credentials, least-privilege security groups, automated infrastructure tests, and demonstrated destroy-and-recreate consistency.
+
 ## Portfolio Focus
 
 These projects emphasize:
